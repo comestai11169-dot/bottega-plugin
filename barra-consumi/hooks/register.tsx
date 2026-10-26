@@ -52,13 +52,14 @@ export const register: Register = on => {
 
   on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
     const m = await read($, misura)
-    if (e.props.hasSurvey || m === null) return next(e)
+    if (e.props.hasSurvey) return next(e)
     const { Box, Text } = $.ui.resolve(e)
+    if (m === null) return (<Box><Text dimColor>barra consumi: in attesa della prima misura</Text></Box>)
     const pezzi: string[] = []
     if (m.cinqueOre !== null) pezzi.push(`5 ore ${m.cinqueOre}%${m.resetCinque ? ` (torna ${ora(m.resetCinque)})` : ''}`)
     if (m.settimana !== null) pezzi.push(`settimana ${m.settimana}%`)
     if (m.contesto !== null) pezzi.push(`chat ${m.contesto}%`)
-    if (pezzi.length === 0) return next(e)
+    if (pezzi.length === 0) return (<Box><Text dimColor>barra consumi: in attesa della prima misura</Text></Box>)
     const pesante = (m.contesto ?? 0) >= 60
     return (
       <Box>

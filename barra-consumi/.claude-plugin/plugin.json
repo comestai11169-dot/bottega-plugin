@@ -1,1 +1,1 @@
-{ "name": "barra-consumi", "version": "0.1.0", "description": "Barra sopra il prompt: limite di 5 ore, settimana e contesto della chat, con avvisi", "types": "./types/index.d.ts" }
+{ "name": "barra-consumi", "version": "0.1.1", "description": "Barra sopra il prompt: limite di 5 ore, settimana e contesto della chat, con avvisi", "types": "./types/index.d.ts" }
