@@ -1,0 +1,5 @@
+{
+  "name": "bottega-plugin",
+  "owner": { "name": "Bottega di Fulgo" },
+  "plugins": [{ "name": "barra-consumi", "source": "./barra-consumi" }]
+}
